@@ -5,6 +5,21 @@
 	<title>道政</title>
 	<link rel="stylesheet" href="/css/style.css">
 	<link rel="shortcut icon" href="/daozheng.ico" />
+	
+	<style type="text/css">
+		#footer {
+			position: fixed;
+			bottom: 0;
+			left: 50%;
+			transform: translateX(-50%);
+			text-align: center;
+			background-color: #f2f2f2;
+			padding: 10px;
+			width: 100%;
+			box-shadow: 0px -2px 6px rgba(0, 0, 0, 0.3);
+			z-index: 999;
+		}
+	</style>
 </head>
 <body>
 	<header>
@@ -43,15 +58,13 @@
 		</article>
 	</main>
 
-	<footer>
-		<p>Copyright © 2023 道政</p>
+	<footer id="footer">
+		<script type="text/javascript">
+		  var launchDate = new Date("2022-02-01");
+		  var currentDate = new Date();
+		  var daysSinceLaunch = Math.floor((currentDate - launchDate) / (1000 * 60 * 60 * 24));
+		  document.write("本站已稳定运行了 " + daysSinceLaunch + " 天。");
+		</script>
 	</footer>
-
-	<script type="text/javascript">
-	  var launchDate = new Date("2023-06-04");
-	  var currentDate = new Date();
-	  var daysSinceLaunch = Math.floor((currentDate - launchDate) / (1000 * 60 * 60 * 24));
-	  document.write("本站被攻击了 " + daysSinceLaunch + " 天");
-	</script>
 </body>
 </html>
