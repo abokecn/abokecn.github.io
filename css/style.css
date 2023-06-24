@@ -71,21 +71,22 @@ footer {
 	border-top: 1px solid #ccc;
 	text-align: center;
 }
-#footer {
-  text-align: center;
+footer {
+  background-color: transparent;
   color: #444;
   padding: 10px;
+  text-align: center;
 }
 
-#footer span {
+footer span {
   font-size: 1.5em;
   font-weight: bold;
 }
 
-#footer span::before {
+footer span::before {
   content: "本站已稳定运行了 ";
 }
 
-#footer span::after {
+footer span::after {
   content: " 天";
 }
