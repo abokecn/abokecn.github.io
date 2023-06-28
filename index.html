@@ -59,12 +59,20 @@
 	</main>
 
 	<footer id="footer">
-		<script type="text/javascript">
-		  var launchDate = new Date("2023-06-04");
-		  var currentDate = new Date();
-		  var daysSinceLaunch = Math.floor((currentDate - launchDate) / (1000 * 60 * 60 * 24));
-		  document.write("本站已稳定运行了 " + daysSinceLaunch + " 天");
-		</script>
-	</footer>
+    <p id="runtime"></p>
+  </footer>
+
+  <script>
+    function getRuntime() {
+      var startTime = new Date(2023, 5, 4, 15, 00, 22).getTime();
+      setInterval(function(){
+        var elapsedTime = new Date().getTime() - startTime;
+        var seconds = Math.floor(elapsedTime / 1000);
+        document.getElementById("runtime").innerHTML = "网站已运行 " + seconds + " 秒.";
+      }, 1000);
+    }
+    
+    getRuntime();
+  </script>
 </body>
 </html>
