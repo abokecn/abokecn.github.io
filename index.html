@@ -63,15 +63,6 @@
 <script>
   function getRuntime() {
     var startTime = new Date(2023, 5, 4, 15, 00, 22).getTime(); // 设置起始时间，此处为2023年6月23日
-    setInterval(function(){
-      var elapsedTime = new Date().getTime() - startTime;
-      var seconds = Math.floor(elapsedTime / 1000);
-      var minutes = Math.floor(seconds / 60);
-      var hours = Math.floor(minutes / 60);
-      var days = Math.floor(hours / 24);
-      var months = Math.floor(days / 30);
-      var years = Math.floor(months / 12);
-      
       seconds %= 60;
       minutes %= 60;
       hours %= 24;
