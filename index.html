@@ -45,38 +45,21 @@
 		</article>
 	</main>
 	<footer id="footer">
-<span>Copyright © 2023 Daozheng All rights reserved </span>
-<script>
-  function getRuntime() {
-    var startTime = new Date(2023, 5, 4, 15, 00, 22).getTime(); 
-    setInterval(function(){
-      var elapsedTime = new Date().getTime() - startTime;
-      var seconds = Math.floor(elapsedTime / 1000);
-      var minutes = Math.floor(seconds / 60);
-      var hours = Math.floor(minutes / 60);
-      var days = Math.floor(hours / 24);
-      var months = Math.floor(days / 30);
-      var years = Math.floor(months / 12);
-      
-      seconds %= 60;
-      minutes %= 60;
-      hours %= 24;
-      days %= 30;
-      months %= 12;
-      
-      var output = "网站已运行 ";
-      if (years) output += years + "年";
-      if (months) output += months + "月";
-      if (days) output += days + "天";
-      if (hours) output += hours + "小时";
-      if (minutes) output += minutes + "分钟";
-      output += seconds + "秒.";
-      
-      document.getElementById("runtime").innerHTML = output;
-    }, 1000);
-  }
-  
-  getRuntime();
+<div class="copyright"><span>Copyright &copy; 2023 Daozheng All rights reserved </span><span>本网站已经稳定运行</span><span id="display_live_time"></span><span class="moe-text">。</span><script>function blog_live_time() {
+  window.setTimeout(blog_live_time, 1000);
+  const start = new Date('2023-05-04T15:00:00');
+  const now = new Date();
+  const timeDiff = (now.getTime() - start.getTime());
+  const msPerMinute = 60 * 1000;
+  const msPerHour = 60 * msPerMinute;
+  const msPerDay = 24 * msPerHour;
+  const passDay = Math.floor(timeDiff / msPerDay);
+  const passHour = Math.floor((timeDiff % msPerDay) / 60 / 60 / 1000);
+  const passMinute = Math.floor((timeDiff % msPerHour) / 60 / 1000);
+  const passSecond = Math.floor((timeDiff % msPerMinute) / 1000);
+  display_live_time.innerHTML = " " + passDay + " 天 " + passHour + " 小时 " + passMinute + " 分 " + passSecond + " 秒";
+}
+blog_live_time();
 </script>
   </footer>
 
